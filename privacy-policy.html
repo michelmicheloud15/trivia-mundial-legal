@@ -96,6 +96,11 @@
       margin-bottom: 0.75rem;
     }
 
+    code {
+      font-size: 0.85em;
+      color: var(--muted);
+    }
+
     .note {
       background: #0d1f0d;
       border-left: 3px solid var(--green);
@@ -119,83 +124,116 @@
 
   <header>
     <h1>Política de Privacidad</h1>
-    <p>Trivia Mundial &mdash; Última actualización: abril de 2026</p>
+    <p>Trivia Mundial &mdash; Última actualización: octubre de 2026</p>
   </header>
 
   <main>
 
     <section>
-      <h2>1. Información que recopilamos</h2>
-      <p>Cuando te registrás en la app, recopilamos:</p>
+      <h2>1. Quiénes somos</h2>
+      <p>Esta política explica qué datos recopila la app <strong>Trivia Mundial</strong> (<code>com.triviamundial.app</code>), para qué los usa y cómo podés eliminarlos. Para cualquier consulta escribinos a <a href="mailto:triviamundial.app@gmail.com">triviamundial.app@gmail.com</a>.</p>
+    </section>
+
+    <section>
+      <h2>2. Información que recopilamos</h2>
+      <p><strong>Si creás una cuenta:</strong></p>
       <ul>
         <li>Nombre o apodo</li>
-        <li>Dirección de correo electrónico</li>
+        <li>Dirección de correo electrónico y contraseña (la contraseña la gestiona Firebase Authentication; nosotros no la vemos)</li>
         <li>Nacionalidad</li>
         <li>Foto de perfil (opcional)</li>
       </ul>
-      <p style="margin-top:0.75rem">Durante el uso de la app, recopilamos:</p>
+      <p style="margin-top:0.75rem"><strong>Mientras jugás:</strong></p>
       <ul>
-        <li>Puntajes y resultados de partidas</li>
-        <li>Modo de juego utilizado</li>
-        <li>Fecha y hora de las partidas</li>
+        <li>Puntajes, modo de juego, respuestas correctas y fecha de cada partida</li>
+        <li>Niveles completados, medallas y racha de recompensas diarias</li>
+        <li>Torneos privados que creás o a los que te unís (nombre del torneo y participantes)</li>
       </ul>
-      <div class="note">Si jugás en <strong>modo invitado</strong>, no recopilamos ningún dato personal. Los puntajes de invitados no se guardan en el podio global.</div>
-    </section>
-
-    <section>
-      <h2>2. Cómo usamos tu información</h2>
+      <p style="margin-top:0.75rem"><strong>Datos técnicos del dispositivo:</strong></p>
       <ul>
-        <li>Mostrar tu nombre, nacionalidad y puntaje en el <strong>podio global</strong>, visible para todos los usuarios</li>
-        <li>Permitirte personalizar tu perfil</li>
-        <li>Mejorar la experiencia de juego</li>
+        <li><strong>Estadísticas de uso</strong> (Firebase Analytics): pantallas visitadas y eventos del juego, asociados a un identificador interno</li>
+        <li><strong>Informes de errores</strong> (Firebase Crashlytics): datos técnicos de los cierres inesperados de la app</li>
+        <li><strong>Identificador de publicidad</strong> del dispositivo (Google AdMob)</li>
+        <li><strong>Token de notificaciones</strong> (Firebase Cloud Messaging), si aceptás recibirlas</li>
+        <li><strong>Estado de tu suscripción</strong> Sin Anuncios (RevenueCat)</li>
       </ul>
-      <div class="note">⚠️ <strong>Datos públicos:</strong> tu nombre, nacionalidad y puntaje son visibles públicamente en el podio para los 10 mejores jugadores. Al registrarte, aceptás esta visibilidad.</div>
+      <div class="note">Si jugás en <strong>modo invitado</strong> no te pedimos nombre, email ni ningún dato personal. Tus puntajes se guardan asociados a un identificador anónimo y no aparecen en el podio. Las estadísticas de uso, los informes de errores y la publicidad funcionan igual que para los usuarios registrados.</div>
     </section>
 
     <section>
-      <h2>3. Almacenamiento de datos</h2>
-      <p>Los datos se almacenan de forma segura en <strong>Google Firebase</strong> (Firestore y Storage), bajo los estándares de seguridad de Google Cloud. Las imágenes de perfil se guardan en Firebase Storage.</p>
-    </section>
-
-    <section>
-      <h2>4. Publicidad</h2>
-      <p>La app utiliza <strong>Google AdMob</strong> para mostrar anuncios. AdMob es una red publicitaria certificada por Google Play. Los anuncios mostrados son aptos para el público general de la app y cumplen con las políticas de contenido de Google Play.</p>
-      <p style="margin-top:0.75rem">AdMob puede recopilar datos del dispositivo para personalizar los anuncios. Podés consultar la política de privacidad de Google en <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>.</p>
-    </section>
-
-    <section>
-      <h2>5. Permisos de la app</h2>
+      <h2>3. Cómo usamos tu información</h2>
       <ul>
-        <li><strong>Cámara:</strong> para tomar fotos de perfil</li>
-        <li><strong>Almacenamiento:</strong> para seleccionar imágenes de la galería</li>
+        <li>Mantener tu cuenta, tu progreso y tus puntajes</li>
+        <li>Mostrar el <strong>podio global</strong> y el de los torneos</li>
+        <li>Enviarte notificaciones (por ejemplo, recordatorios de tu racha diaria), si las activaste</li>
+        <li>Mostrar anuncios y gestionar la suscripción Sin Anuncios</li>
+        <li>Detectar errores y mejorar el juego</li>
+      </ul>
+      <div class="note">⚠️ <strong>Datos públicos:</strong> tu nombre, foto de perfil, nacionalidad y puntajes son visibles para otros usuarios en el podio y en los torneos. La foto de perfil se publica mediante un enlace accesible para cualquiera que lo tenga. Tu email nunca se muestra a otros usuarios.</div>
+    </section>
+
+    <section>
+      <h2>4. Dónde se guardan los datos</h2>
+      <p>Los datos de tu cuenta y del juego se almacenan en <strong>Google Firebase</strong> (Authentication, Firestore y Storage), bajo los estándares de seguridad de Google Cloud. Los servidores pueden estar fuera de tu país.</p>
+    </section>
+
+    <section>
+      <h2>5. Servicios de terceros</h2>
+      <p>Usamos estos proveedores, que tratan datos en nuestro nombre o bajo sus propias políticas:</p>
+      <ul>
+        <li><strong>Google Firebase</strong> (Authentication, Firestore, Storage, Analytics, Crashlytics y Cloud Messaging) &mdash; <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li>
+        <li><strong>Google AdMob</strong> (publicidad) &mdash; <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+        <li><strong>RevenueCat</strong> (suscripciones) &mdash; <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></li>
+        <li><strong>Google Play</strong> procesa los pagos; nosotros no recibimos los datos de tu tarjeta</li>
+      </ul>
+      <p style="margin-top:0.75rem">No vendemos tu información personal ni la compartimos con terceros para fines comerciales propios.</p>
+    </section>
+
+    <section>
+      <h2>6. Publicidad y consentimiento</h2>
+      <p>La app muestra anuncios de <strong>Google AdMob</strong>, que pueden usar el identificador de publicidad del dispositivo para personalizarlos y medirlos. Los anuncios cumplen las políticas de contenido de Google Play.</p>
+      <p style="margin-top:0.75rem">Si estás en el Espacio Económico Europeo, el Reino Unido o Suiza, la app te pide tu consentimiento antes de usar datos para publicidad y estadísticas. Podés cambiar tu elección en cualquier momento desde <strong>Perfil &rarr; Privacidad y anuncios</strong>.</p>
+      <p style="margin-top:0.75rem">En cualquier país podés restablecer o eliminar tu identificador de publicidad desde los ajustes de Google de tu dispositivo. Con la suscripción <strong>Sin Anuncios</strong> no se muestran anuncios.</p>
+    </section>
+
+    <section>
+      <h2>7. Permisos de la app</h2>
+      <ul>
+        <li><strong>Cámara:</strong> solo para tomar tu foto de perfil, si lo elegís</li>
+        <li><strong>Fotos / galería:</strong> solo para elegir tu foto de perfil, si lo elegís</li>
+        <li><strong>Notificaciones:</strong> para recordatorios y novedades; podés desactivarlas desde Perfil o desde los ajustes del sistema</li>
       </ul>
     </section>
 
     <section>
-      <h2>6. Eliminación de datos</h2>
-      <p>Podés solicitar la eliminación de tu cuenta y todos tus datos en cualquier momento escribiéndonos a <a href="mailto:soporte@triviamundial.com">soporte@triviamundial.com</a>.</p>
+      <h2>8. Cuánto tiempo guardamos los datos</h2>
+      <ul>
+        <li><strong>Cuenta, perfil y puntajes:</strong> mientras tengas la cuenta. Al eliminarla se borran de inmediato.</li>
+        <li><strong>Estadísticas de uso:</strong> se conservan de forma seudónima (sin tu nombre ni tu email), solo para analizar cómo se usa el juego.</li>
+        <li><strong>Informes de errores:</strong> hasta 90 días.</li>
+      </ul>
     </section>
 
     <section>
-      <h2>7. Menores de edad</h2>
-      <div class="badge">ACTUALIZADO</div>
-      <p>La app está orientada a usuarios de <strong>13 años en adelante</strong>. No recopilamos intencionalmente datos personales de menores de 13 años. Si sos padre, madre o tutor y creés que tu hijo menor de 13 años se registró en la app, contactanos a <a href="mailto:soporte@triviamundial.com">soporte@triviamundial.com</a> para eliminar sus datos.</p>
+      <h2>9. Eliminación de tu cuenta y tus derechos</h2>
+      <p>Podés eliminar tu cuenta y todos tus datos <strong>desde la app</strong>, en <strong>Perfil &rarr; Eliminar cuenta</strong>. También podés pedirlo por email. Todos los detalles están en la página <a href="delete-account.html">Eliminar mi cuenta</a>.</p>
+      <p style="margin-top:0.75rem">También podés pedirnos acceso a tus datos o su corrección escribiendo a <a href="mailto:triviamundial.app@gmail.com">triviamundial.app@gmail.com</a>. Respondemos en un plazo máximo de 30 días.</p>
     </section>
 
     <section>
-      <h2>8. Terceros y comercialización de datos</h2>
-      <p>No vendemos ni compartimos tu información personal con terceros con fines comerciales. Los datos almacenados en Firebase están sujetos a la política de privacidad de Google Cloud.</p>
+      <h2>10. Menores de edad</h2>
+      <p>La app está orientada a usuarios de <strong>13 años en adelante</strong>. No recopilamos intencionalmente datos personales de menores de 13 años. Si sos padre, madre o tutor y creés que tu hijo o hija menor de 13 años creó una cuenta, escribinos a <a href="mailto:triviamundial.app@gmail.com">triviamundial.app@gmail.com</a> y eliminaremos sus datos.</p>
     </section>
 
     <section>
-      <h2>9. Contacto</h2>
-      <p>Si tenés preguntas sobre esta política, escribinos a <a href="mailto:soporte@triviamundial.com">soporte@triviamundial.com</a>.</p>
+      <h2>11. Cambios en esta política</h2>
+      <p>Si cambiamos esta política, actualizaremos la fecha de arriba. Si los cambios son importantes, te avisaremos dentro de la app.</p>
     </section>
 
   </main>
 
   <footer>
-    <p>&copy; 2026 Trivia Mundial. Todos los derechos reservados.</p>
+    <p>&copy; 2026 Trivia Mundial &mdash; <a href="delete-account.html">Eliminar mi cuenta</a></p>
   </footer>
 
 </body>
