@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duelo - Trivia Mundial</title>
+  <meta property="og:title" content="⚔️ Te desafiaron en Trivia Mundial">
+  <meta property="og:description" content="10 preguntas de fútbol. ¿Superás a tu amigo?">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #f5c107;
+      --dark: #0a1628;
+      --card: #0d1b2e;
+      --text: #ffffff;
+      --muted: #8bafc9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    main { max-width: 420px; width: 100%; }
+    .swords { font-size: 64px; }
+    h1 { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; letter-spacing: 1px; color: var(--gold); margin: 0.5rem 0; }
+    p { color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
+    .code { background: var(--card); border: 1px solid rgba(245,193,7,0.4); border-radius: 16px; padding: 1rem; margin-bottom: 1.5rem; }
+    .code small { display: block; color: var(--muted); font-size: 0.75rem; letter-spacing: 1px; }
+    .code strong { font-size: 2rem; letter-spacing: 6px; }
+    a.btn { display: block; border-radius: 14px; padding: 1rem; font-weight: 600; text-decoration: none; margin-bottom: 0.75rem; }
+    .primary { background: var(--gold); color: var(--dark); }
+    .secondary { border: 1px solid var(--muted); color: var(--text); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="swords">⚔️</div>
+    <h1>Te desafiaron</h1>
+    <p>Respondé las mismas 10 preguntas de fútbol que tu amigo y fijate quién sabe más.</p>
+    <div class="code" id="codeBox" hidden>
+      <small>CÓDIGO DEL DUELO</small>
+      <strong id="code"></strong>
+    </div>
+    <a class="btn primary" id="open" href="#">Abrir el duelo en la app</a>
+    <a class="btn secondary" id="install" href="#">Instalar Trivia Mundial</a>
+    <p style="font-size: 0.85rem">¿Recién la instalaste? Abrila, tocá "¿Te desafiaron? Ingresá el código" en Inicio y escribí el código.</p>
+  </main>
+  <script>
+    var PACKAGE = "com.triviamundial.app";
+    var code = (new URLSearchParams(location.search).get("c") || "").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 8);
+    var store = "https://play.google.com/store/apps/details?id=" + PACKAGE +
+      (code ? "&referrer=" + encodeURIComponent("duelo=" + code) : "");
+    document.getElementById("install").href = store;
+
+    if (code) {
+      document.getElementById("code").textContent = code;
+      document.getElementById("codeBox").hidden = false;
+      // Android: abre la app si está instalada; si no, Chrome va a la Play Store.
+      var intent = "intent://duelo/" + code + "#Intent;scheme=triviamundial;package=" + PACKAGE +
+        ";S.browser_fallback_url=" + encodeURIComponent(store) + ";end";
+      var open = document.getElementById("open");
+      open.href = /Android/i.test(navigator.userAgent) ? intent : store;
+      if (/Android/i.test(navigator.userAgent)) location.href = intent;
+    } else {
+      document.getElementById("open").hidden = true;
+    }
+  </script>
+</body>
+</html>
