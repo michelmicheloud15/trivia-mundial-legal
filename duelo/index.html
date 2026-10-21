@@ -6,6 +6,11 @@
   <title>Duelo - Trivia Mundial</title>
   <meta property="og:title" content="⚔️ Te desafiaron en Trivia Mundial">
   <meta property="og:description" content="10 preguntas de fútbol. ¿Superás a tu amigo?">
+  <meta property="og:image" content="https://michelmicheloud15.github.io/trivia-mundial-legal/duelo/icon.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="icon.png">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -28,7 +33,7 @@
       text-align: center;
     }
     main { max-width: 420px; width: 100%; }
-    .swords { font-size: 64px; }
+    .app-icon { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 8px 24px rgba(245,193,7,0.25); }
     h1 { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; letter-spacing: 1px; color: var(--gold); margin: 0.5rem 0; }
     p { color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
     .code { background: var(--card); border: 1px solid rgba(245,193,7,0.4); border-radius: 16px; padding: 1rem; margin-bottom: 1.5rem; }
@@ -41,8 +46,8 @@
 </head>
 <body>
   <main>
-    <div class="swords">⚔️</div>
-    <h1>Te desafiaron</h1>
+    <img class="app-icon" src="icon.png" alt="Trivia Mundial">
+    <h1>⚔️ Te desafiaron</h1>
     <p>Respondé las mismas 10 preguntas de fútbol que tu amigo y fijate quién sabe más.</p>
     <div class="code" id="codeBox" hidden>
       <small>CÓDIGO DEL DUELO</small>
